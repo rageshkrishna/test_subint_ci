@@ -2,7 +2,7 @@ language: none
 build:
   ci:
     - echo "Hello, World!"
-    - echo $(shipctl get_integration_resource_keys aws_dummy_res)
+    - The secret is - echo $(shipctl get_integration_resource_field aws_dummy_res secretKey)
     
 integrations:
   generic:
