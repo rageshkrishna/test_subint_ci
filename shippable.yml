@@ -2,12 +2,19 @@ language: none
 build:
   ci:
     - echo "Hello, World!"
+    - echo $(shipctl get_integration_resource_keys aws_dummy_res)
+    
 integrations:
   generic:
     - integrationName: aws_dummy
+    
+resources:
+  - name: aws_dummy_res
+    type: integration
+    integration: aws_dummy
 
 jobs:
   - name: test_subint_ci_runCI
     type: runCI
     steps:
-      - IN: aws_dummy
+      - IN: aws_dummy_res
