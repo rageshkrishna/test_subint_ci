@@ -2,12 +2,8 @@ language: none
 build:
   ci:
     - echo "Hello, World!"
-    - echo The secret is - echo $(shipctl get_integration_resource_field aws_dummy_res secretKey)
-    
-integrations:
-  generic:
-    - integrationName: aws_dummy
-    
+    - echo The access key is $(shipctl get_integration_resource_field aws_dummy_res accessKey)
+
 resources:
   - name: aws_dummy_res
     type: integration
