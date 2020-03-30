@@ -5,3 +5,9 @@ build:
 integrations:
   generic:
     - integrationName: aws_dummy
+
+jobs:
+  - name: test_subint_ci_runCI
+    type: runCI
+    steps:
+      - IN: aws_dummy
